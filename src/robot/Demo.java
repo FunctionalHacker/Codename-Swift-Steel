@@ -7,12 +7,17 @@ public class Demo {
 	int boxPos1;
 	int boxPos2;
 
+	BottomMotor bottomMotor = new BottomMotor();
+	MiddleMotor middlemotor = new MiddleMotor();
+	TopMotor topmotor = new TopMotor();
+
 	public void sort() {
 		if (!inDefaultPos) {
 			rotateToDefaultPos();
 		}
 
-		craneMotor.lift();
+
+		middleMotor.lift();
 
 		getResources();
 		rotateToDefaultPos();
@@ -23,32 +28,32 @@ public class Demo {
 
 
 	public void rotateToDefaultPos() {
-			craneMotor.lift();
+			middleMotor.lift();
 
 		//}
 		while(!touchSensor.getIsTouched()) { //Käännetään kurki oikeaan asentoon
-			baseMotor.rotate(10);
+			bottomMotor.rotate(10);
 
 		} //Lasketaan kurki alas
-		//baseMotor.setAsMaxRotation(); tällä voisi asettaa baseMotorin max arvon
-		baseMotor.stop();
-		craneMotor.lower();
+		//bottomMotor.setAsMaxRotation(); tällä voisi asettaa bottomMotorin max arvon
+		bottomMotor.stop();
+		middleMotor.lower();
 		inDefaultPos = true;
 	}
 
 	public void getResources() {
 		inDefaultPos = false;
-		while(baseMotor.getRotation() < resourcesBox) {
-			baseMotor.rotate(10);
+		while(bottomMotor.getRotation() < resourcesBox) {
+			bottomMotor.rotate(10);
 		}
 		pickUp();
 	}
 
 	public void pickUp() {
-		handMotor.open();
-		craneMotor.lower();
-		handMotor.close();
-		craneMotor.lift();
+		topMotor.open();
+		middleMotor.lower();
+		topMotor.close();
+		middleMotor.lift();
 
 	}
 
@@ -59,14 +64,14 @@ public class Demo {
 
 		inDefaultPos = false;
 		if (color == 1) {
-			while(baseMotor.getRotation < boxPos1) {
-				baseMotor.rotate(10);
+			while(bottomMotor.getRotation < boxPos1) {
+				bottomMotor.rotate(10);
 				pickUp();
 
 			}
 		} else {
-			while(baseMotor.getRotation < boxPos2) {
-				baseMotor.rotate(10);
+			while(bottomMotor.getRotation < boxPos2) {
+				bottomMotor.rotate(10);
 				pickUp();
 			}
 		}
