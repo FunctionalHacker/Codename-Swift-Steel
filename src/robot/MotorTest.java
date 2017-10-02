@@ -6,7 +6,7 @@ import lejos.hardware.port.MotorPort;
 import lejos.robotics.RegulatedMotor;
 import lejos.utility.Delay;
 
-public class Motor {
+public class MotorTest {
 	Thread thread = new Thread();
 	private int maxspeed = 500;
 	// To get the correct rotation, the degree amount must be multiplied by 3, to get the correct
@@ -17,7 +17,7 @@ public class Motor {
 	private static int bottomPos, middlePos, armPos;
 	private static int bottomMax, middleMax, armMax;
 
-	public Motor(){
+	public MotorTest(){
 		bottomPos = 0;
 		middlePos = 0;
 		armPos = 0;
@@ -29,8 +29,11 @@ public class Motor {
 		arm.setSpeed(200);
 	}
 	public void test(){
-		arm.rotate(110);
-		bottom.rotate(bottomMax);
-		bottom.rotate(-bottomMax);
+		int i = 0;
+		while (i<10) {
+			arm.rotate(110);
+			arm.rotate(-110);
+			i+=1;
+	}
 	}
 }
