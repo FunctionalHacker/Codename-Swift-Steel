@@ -14,8 +14,23 @@ public class Motor {
 	private RegulatedMotor bottom = new EV3LargeRegulatedMotor(MotorPort.A);
 	private RegulatedMotor middle = new EV3LargeRegulatedMotor(MotorPort.B);
 	private RegulatedMotor arm = new EV3MediumRegulatedMotor(MotorPort.C);
+	private static int bottomPos, middlePos, armPos;
+	private static int bottomMax, middleMax, armMax;
 
+	public Motor(){
+		bottomPos = 0;
+		middlePos = 0;
+		armPos = 0;
+
+		bottomMax = -220*3;
+		middleMax = -90*3;
+
+		bottom.setSpeed(100);
+		arm.setSpeed(200);
+	}
 	public void test(){
-		bottom.rotate(180*3);
+		arm.rotate(110);
+		bottom.rotate(bottomMax);
+		bottom.rotate(-bottomMax);
 	}
 }
