@@ -4,17 +4,16 @@ import lejos.robotics.subsumption.*;
 
 public class Main {
 	public static void main(String[] args) {
-		BottomMotor bottomMotor = new BottomMotor();
-		TopMotor topMotor = new TopMotor();
+		BottomMotor bMotor = new BottomMotor();
+		MiddleMotor mMotor = new MiddleMotor();
+		TopMotor tMotor = new TopMotor();
 
-		topMotor.toggle();
-		topMotor.toggle();
-
-		bottomMotor.rotate(180*3);
-		bottomMotor.rotateToDefaultPos();
-		bottomMotor.rotate(500*3);
-		bottomMotor.rotateToDefaultPos();
-
+		bMotor.rotate(500);
+		mMotor.rotate(500);
+		tMotor.toggle();
+		tMotor.toggle();
+		bMotor.rotateToDefaultPos();
+		mMotor.rotateToDefaultPos();
 
 //		Behavior's priority is determined by it's position in
 //		behaviorArray. First index being the lowest priority

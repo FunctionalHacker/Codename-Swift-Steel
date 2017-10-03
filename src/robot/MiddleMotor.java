@@ -10,22 +10,18 @@ public class MiddleMotor {
 	private static int maxRotation;
 
 	public MiddleMotor(){
-		maxRotation = -90*3;
+		maxRotation = 90*3;
 		curRotation = 0;
 	}
-	public boolean rotate(int angle){
-		angle=angle*3;
-		if(angle + curRotation < maxRotation){
-			return false;
+	public void rotate(int angle){
+		if(angle + curRotation > maxRotation){
+			angle = maxRotation - curRotation;
 		}
-		else{
-			motor.rotate(angle);
-			curRotation = curRotation + angle;
-			return true;
-		}
+		motor.rotate(-angle);
+		curRotation += angle;
 	}
 	public void rotateToDefaultPos(){
-		this.rotate(-curRotation);
+		rotate(-curRotation);
 		curRotation = 0;
 	}
 }
