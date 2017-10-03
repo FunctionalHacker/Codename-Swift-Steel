@@ -4,11 +4,12 @@ import lejos.robotics.subsumption.*;
 
 public class Main {
 	public static void main(String[] args) {
-		BottomMotor bMotor = new BottomMotor();
+		TouchSensor ts = new TouchSensor("S2");
+		BottomMotor bMotor = new BottomMotor(ts);
 		MiddleMotor mMotor = new MiddleMotor();
 		TopMotor tMotor = new TopMotor();
 
-		bMotor.rotate(500);
+		bMotor.rotateToDef();
 		mMotor.rotate(500);
 		tMotor.toggle();
 		tMotor.toggle();

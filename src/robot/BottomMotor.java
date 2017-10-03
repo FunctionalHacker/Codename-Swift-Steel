@@ -8,8 +8,10 @@ public class BottomMotor {
 	private RegulatedMotor motor = new EV3LargeRegulatedMotor(MotorPort.A);
 	private int curRotation;
 	private static int maxRotation;
+	TouchSensor ts;
 
-	public BottomMotor(){
+	public BottomMotor(TouchSensor ts){
+		this.ts = ts;
 		maxRotation = 260*3;
 		curRotation = 0;
 	}
@@ -20,8 +22,19 @@ public class BottomMotor {
 		motor.rotate(-angle);
 		curRotation += angle;
 	}
-	public void rotateToDefaultPos(){
-		rotate(-curRotation);
-		curRotation = 0;
+	//public void rotateToDefaultPos(){
+	//	rotate(-curRotation);
+	//	curRotation = 0;
+	//}
+
+	public void rotateToDefaultPos() {
+		motor.forward();
+		while(true) {
+			if (ts.pressed()) {
+				motor.stop();
+				curRotation = 0;
+				break;
+			}
+		}
 	}
 }
