@@ -10,21 +10,15 @@ public class BottomMotor {
 	private static int maxRotation;
 
 	public BottomMotor(){
-		maxRotation = 220*3;
+		maxRotation = 260*3;
 		curRotation = 0;
 	}
 	public void rotate(int angle){
-		angle=angle*3;
-		if(angle > maxRotation){
-			angle = maxRotation;
-		}
 		if(angle + curRotation > maxRotation){
 			angle = maxRotation - curRotation;
 		}
-		else{
-			motor.rotate(-angle);
-			curRotation = curRotation + angle;
-		}
+		motor.rotate(-angle);
+		curRotation += angle;
 	}
 	public void rotateToDefaultPos(){
 		rotate(-curRotation);
