@@ -27,7 +27,7 @@ public class BottomMotor {
 		}
 	}
 	public void rotateToDefaultPos(){
-		this.rotate(-curRotation);
+		rotate(-curRotation);
 		curRotation = 0;
 	}
 }
