@@ -10,7 +10,9 @@ public class Main {
 		topMotor.toggle();
 		topMotor.toggle();
 
-		bottomMotor.rotate(180);
+		bottomMotor.rotate(180*3);
+		bottomMotor.rotateToDefaultPos();
+		bottomMotor.rotate(500*3);
 		bottomMotor.rotateToDefaultPos();
 
 
