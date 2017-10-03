@@ -14,6 +14,7 @@ public class BottomMotor {
 		curRotation = 0;
 	}
 	public boolean rotate(int angle){
+		angle=-angle*3;
 		if(angle + curRotation < maxRotation){
 			return false;
 		}
