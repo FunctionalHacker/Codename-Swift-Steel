@@ -50,4 +50,10 @@ public class Navigator {
 		bMotor.rotateToDefaultPos();
 		mMotor.rotateToDefaultPos();
 	}
+
+	public void lift() {
+		if (mMotor.getCurRotation() != rideHeight) {
+			mMotor.rotate(rideHeight);
+		}
+	}
 }

@@ -31,6 +31,7 @@ public class MiddleMotor {
 	public MiddleMotor(){
 		maxRotation = 90*3;
 		curRotation = 0;
+		motor.setSpeed(150);
 	}
 	/**
 	 * Rotates the motor for a specified amount. Positive angle is away from the default

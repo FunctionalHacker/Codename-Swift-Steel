@@ -26,8 +26,6 @@ public class ColorSensor {
 		rgbSample = new float[colorProvider.sampleSize()];
 		colorA = new float[colorProvider.sampleSize()];
 		colorB = new float[colorProvider.sampleSize()];
-		saveColors();
-
 	}
 
 	/**

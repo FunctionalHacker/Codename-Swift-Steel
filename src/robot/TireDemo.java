@@ -8,7 +8,7 @@ package robot;
 public class TireDemo {
 	public static void main(String[] args) {
 		TouchSensor tSensor = new TouchSensor("S2");
-		BottomMotor bMotor = new BottomMotor(tSensor);
+		BottomMotor bMotor = new BottomMotor();
 		MiddleMotor mMotor = new MiddleMotor();
 		TopMotor tMotor = new TopMotor();
 
