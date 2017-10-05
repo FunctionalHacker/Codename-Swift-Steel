@@ -10,14 +10,15 @@ import lejos.robotics.RegulatedMotor;
  *
  */
 public class TopMotor {
+	private int maxRotation = 80;
 	private boolean position;
 	/**
 	 * The LeJOS motor used in this class
 	 */
-	private RegulatedMotor arm = new EV3MediumRegulatedMotor(MotorPort.C);
+	private RegulatedMotor tMotor = new EV3MediumRegulatedMotor(MotorPort.C);
 	public TopMotor() {
 		position = true;
-		arm.setSpeed(200);
+		tMotor.setSpeed(200);
 	}
 
 	/**
@@ -25,10 +26,10 @@ public class TopMotor {
 	 */
 	public void toggle() {
 		if (position) {
-			arm.rotate(110);
+			tMotor.rotate(maxRotation);
 			position = false;
 		} else {
-			arm.rotate(-110);
+			tMotor.rotate(-maxRotation);
 			position = true;
 		}
 	}

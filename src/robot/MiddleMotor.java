@@ -20,6 +20,9 @@ public class MiddleMotor {
 	 */
 	private int curRotation;
 
+	public int getCurRotation() {
+		return curRotation;
+	}
 	/**
 	 * The maximum rotation the motor can handle
 	 */

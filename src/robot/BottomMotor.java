@@ -20,20 +20,32 @@ public class BottomMotor {
 	 */
 	private int curRotation;
 
+	public int getCurRotation() {
+		return curRotation;
+	}
+
 	/**
 	 * The maximum rotation the motor can handle
 	 */
 	private static int maxRotation;
-
-	/**
-	 * The touch sensor is used to stop the motor before
-	 * the bottom motor hits anything
-	 */
 	TouchSensor tSensor;
 
-	public BottomMotor(TouchSensor tSensor){
-		this.tSensor = tSensor;
+	public BottomMotor(){
+
+		/**
+		 * The touch sensor is used to stop the motor before
+		 * the bottom motor hits anything when returning home
+		 */
+		tSensor = new TouchSensor("S2");
+
+		/**
+		 * The maximum rotation the motor can handle
+		 */
 		maxRotation = 260*3;
+
+		/**
+		 * The current rotation of the motor is always saved here
+		 */
 		curRotation = 0;
 	}
 

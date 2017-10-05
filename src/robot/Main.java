@@ -11,19 +11,23 @@ import lejos.robotics.subsumption.*;
  */
 public class Main {
 	public static void main(String[] args) {
-		TouchSensor tSensor = new TouchSensor("S2");
-		BottomMotor bMotor = new BottomMotor(tSensor);
-		MiddleMotor mMotor = new MiddleMotor();
-		TopMotor tMotor = new TopMotor();
+		TwoTiresTwoCups tttc = new TwoTiresTwoCups();
+		tttc.run();
 
-		bMotor.rotateToDefaultPos();
-		mMotor.rotate(500);
-		tMotor.toggle();
-		mMotor.rotate(500*3);
-		bMotor.rotate(-70*3);
-		tMotor.toggle();
-		bMotor.rotateToDefaultPos();
-		mMotor.rotateToDefaultPos();
+//		TESTS
+//		TouchSensor tSensor = new TouchSensor("S2");
+//		BottomMotor bMotor = new BottomMotor(tSensor);
+//		MiddleMotor mMotor = new MiddleMotor();
+//		TopMotor tMotor = new TopMotor();
+//
+//		bMotor.rotateToDefaultPos();
+//		mMotor.rotate(500);
+//		tMotor.toggle();
+//		mMotor.rotate(500*3);
+//		bMotor.rotate(-70*3);
+//		tMotor.toggle();
+//		bMotor.rotateToDefaultPos();
+//		mMotor.rotateToDefaultPos();
 
 //		Behavior b1 = new BUser();
 //		Behavior b2 = new BDemo();
