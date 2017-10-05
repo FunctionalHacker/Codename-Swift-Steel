@@ -10,7 +10,7 @@ import lejos.robotics.RegulatedMotor;
  *
  */
 public class TopMotor {
-	private int maxRotation = 80;
+	private int maxRotation = 85;
 	private boolean position;
 	/**
 	 * The LeJOS motor used in this class

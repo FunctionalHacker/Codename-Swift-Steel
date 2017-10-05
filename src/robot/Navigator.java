@@ -5,11 +5,11 @@ public class Navigator {
 	MiddleMotor mMotor;
 	TopMotor tMotor;
 
-	private int rideHeight = 50*3;
-	private int tA = 130*3;
+	private int rideHeight = 70*3;
+	private int tA = 140*3;
 	private int tB = 100*3;
 	private int cA = 260*3;
-	private int cB = 240*3;
+	private int cB = 210*3;
 
 	public Navigator(){
 		bMotor = new BottomMotor();
@@ -31,11 +31,12 @@ public class Navigator {
 
 	public void cupA(){
 		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
-		bMotor.rotate((cupAlocation)-bMotor.getCurRotation());
+		bMotor.rotate((cA)-bMotor.getCurRotation());
 	}
 
 	public void cupB(){
-
+		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
+		bMotor.rotate((cB)-bMotor.getCurRotation());
 	}
 
 	public void grabToggle(){

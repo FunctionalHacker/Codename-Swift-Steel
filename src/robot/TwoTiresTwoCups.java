@@ -8,9 +8,13 @@ public class TwoTiresTwoCups {
 		navi = new Navigator();
 	}
 	public void run(){
-		navi.tireB();
+		navi.tireA();
 		navi.grabToggle();
 		navi.cupA();
+		navi.grabToggle();
+		navi.tireB();
+		navi.grabToggle();
+		navi.cupB();
 		navi.grabToggle();
 		navi.rotateToDefaultPos();
 	}
