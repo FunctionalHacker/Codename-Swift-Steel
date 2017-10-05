@@ -34,7 +34,7 @@ public class ColorSensor {
 	 * checkColor compares the color sensor's current input at the given time to the sample provided by saveColors method.
 	 * @return The method returns true, when the calculated value is lower than the threshold value. Otherwise returns false.
 	 */
-	public boolean checkColor () {
+	public int checkColor () {
 		colorProvider.fetchSample(rgbSample, 0);
 		int[] realA = new int[3];
         realA[0] = Math.round(colorA[0]*765);
@@ -65,9 +65,12 @@ public class ColorSensor {
 
         int thresholdValue = 50;
         if (thresholdValue > sampleColorA) {
-                return true;
+                return 1;
         }
-        return false;
+        if (thresholdValue > sampleColorB) {
+            return 2;
+        }
+        return 0;
 	}
 	/**
 	 * Sets up the sample colors for the colorCheck method.
