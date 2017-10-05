@@ -15,7 +15,10 @@ public class ColorSensor {
 	private float[] colorA;
 	private float[] colorB;
 
-//	Class constructor with a String parameter for configuring the port.
+	/**
+	 * Class constructor with a String parameter for configuring the port.
+	 * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+	 */
 	public ColorSensor(String port) {
 		sensorPort = LocalEV3.get().getPort(port);
 		rgbSensor = new EV3ColorSensor(sensorPort);
@@ -27,10 +30,10 @@ public class ColorSensor {
 
 	}
 
-//	checkColor compares the color sensor's current input at
-//	the given time to the sample provided by saveColors method.
-//	The method returns true, when the calculated value is
-//	lower than the threshold value. Otherwise returns false.
+	/**
+	 * checkColor compares the color sensor's current input at the given time to the sample provided by saveColors method.
+	 * @return The method returns true, when the calculated value is lower than the threshold value. Otherwise returns false.
+	 */
 	public boolean checkColor () {
 		colorProvider.fetchSample(rgbSample, 0);
 		int[] realA = new int[3];
@@ -66,12 +69,11 @@ public class ColorSensor {
         }
         return false;
 	}
-//	saveColors sets up the sample colors for the colorCheck
-//	method.
+	/**
+	 * Sets up the sample colors for the colorCheck method.
+	 */
 	public void saveColors() {
-
     	System.out.println("Show samplecolor A to the color sensor and press Escape to verify it.");
-
 
     	while (Button.ID_ESCAPE == Button.waitForAnyPress()) {
         	colorProvider.fetchSample(colorA, 0);
@@ -92,6 +94,4 @@ public class ColorSensor {
     	}
 
     }
-
 }
-
