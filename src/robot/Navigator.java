@@ -6,6 +6,7 @@ public class Navigator {
 	TopMotor tMotor;
 
 	private int rideHeight = 70*3;
+	private int t1Height = rideHeight - 23*3;
 	private int tA = 140*3;
 	private int tB = 100*3;
 	private int cA = 260*3;
@@ -17,13 +18,25 @@ public class Navigator {
 		tMotor = new TopMotor();
 	}
 
-	public void tireA(){
+	public void tireA1(){
+		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
+		bMotor.rotate((tA)-bMotor.getCurRotation());
+		mMotor.rotate(-t1Height);
+	}
+
+	public void tireB1(){
+		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
+		bMotor.rotate((tB)-bMotor.getCurRotation());
+		mMotor.rotate(-t1Height);
+	}
+
+	public void tireA2(){
 		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
 		bMotor.rotate((tA)-bMotor.getCurRotation());
 		mMotor.rotateToDefaultPos();
 	}
 
-	public void tireB(){
+	public void tireB2(){
 		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
 		bMotor.rotate((tB)-bMotor.getCurRotation());
 		mMotor.rotateToDefaultPos();
@@ -44,7 +57,7 @@ public class Navigator {
 	}
 
 	public void rotateToDefaultPos(){
-		if(mMotor.getCurRotation() == 0){
+		if(mMotor.getCurRotation() != rideHeight){
 			mMotor.rotate(rideHeight);
 		}
 		bMotor.rotateToDefaultPos();

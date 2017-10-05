@@ -12,7 +12,9 @@ public class TwoTiresTwoCups {
 	public void run(){
 		navi.lift();
 		color.saveColors();
-		navi.tireA();
+
+		// Tire A1
+		navi.tireA1();
 		navi.grabToggle();
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
@@ -23,7 +25,9 @@ public class TwoTiresTwoCups {
 			navi.cupA();
 		}
 		navi.grabToggle();
-		navi.tireB();
+
+		// Tire B1
+		navi.tireB1();
 		navi.grabToggle();
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
@@ -34,6 +38,33 @@ public class TwoTiresTwoCups {
 			navi.cupA();
 		}
 		navi.grabToggle();
+
+		// Tire A2
+		navi.tireA2();
+		navi.grabToggle();
+		navi.rotateToDefaultPos();
+		if (color.checkColor()==1) {
+			System.out.println(color.checkColor());
+			navi.cupB();
+		} else {
+			System.out.println(color.checkColor());
+			navi.cupA();
+		}
+		navi.grabToggle();
+
+		// Tire B2
+		navi.tireB2();
+		navi.grabToggle();
+		navi.rotateToDefaultPos();
+		if (color.checkColor()==1) {
+			System.out.println(color.checkColor());
+			navi.cupB();
+		} else {
+			System.out.println(color.checkColor());
+			navi.cupA();
+		}
+		navi.grabToggle();
+
 		navi.rotateToDefaultPos();
 	}
 }
