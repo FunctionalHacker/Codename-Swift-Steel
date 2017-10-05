@@ -10,13 +10,29 @@ import lejos.robotics.RegulatedMotor;
  *
  */
 public class BottomMotor {
+	/**
+	 * The LeJOS motor used in this class
+	 */
 	private RegulatedMotor motor = new EV3LargeRegulatedMotor(MotorPort.A);
-	private int curRotation;
-	private static int maxRotation;
-	TouchSensor ts;
 
-	public BottomMotor(TouchSensor ts){
-		this.ts = ts;
+	/**
+	 * The current rotation of the motor is always saved here
+	 */
+	private int curRotation;
+
+	/**
+	 * The maximum rotation the motor can handle
+	 */
+	private static int maxRotation;
+
+	/**
+	 * The touch sensor is used to stop the motor before
+	 * the bottom motor hits anything
+	 */
+	TouchSensor tSensor;
+
+	public BottomMotor(TouchSensor tSensor){
+		this.tSensor = tSensor;
 		maxRotation = 260*3;
 		curRotation = 0;
 	}
@@ -40,7 +56,7 @@ public class BottomMotor {
 	public void rotateToDefaultPos() {
 		motor.forward();
 		while(true) {
-			if (ts.pressed()) {
+			if (tSensor.pressed()) {
 				motor.stop();
 				curRotation = 0;
 				break;

@@ -10,8 +10,19 @@ import lejos.robotics.RegulatedMotor;
  *
  */
 public class MiddleMotor {
+	/**
+	 * The LeJOS motor used in this class
+	 */
 	private RegulatedMotor motor = new EV3LargeRegulatedMotor(MotorPort.B);
+
+	/**
+	 * The current rotation of the motor is always saved here
+	 */
 	private int curRotation;
+
+	/**
+	 * The maximum rotation the motor can handle
+	 */
 	private static int maxRotation;
 
 	public MiddleMotor(){

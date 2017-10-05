@@ -11,6 +11,9 @@ import lejos.robotics.RegulatedMotor;
  */
 public class TopMotor {
 	private boolean position;
+	/**
+	 * The LeJOS motor used in this class
+	 */
 	private RegulatedMotor arm = new EV3MediumRegulatedMotor(MotorPort.C);
 	public TopMotor() {
 		position = true;

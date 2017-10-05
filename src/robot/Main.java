@@ -2,6 +2,13 @@ package robot;
 
 import lejos.robotics.subsumption.*;
 
+/**
+ * Behavior's priority is determined by it's position in
+ * behaviorArray. First index being the lowest priority
+ * and last being the highest.
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class Main {
 	public static void main(String[] args) {
 		TouchSensor tSensor = new TouchSensor("S2");
@@ -17,10 +24,6 @@ public class Main {
 		tMotor.toggle();
 		bMotor.rotateToDefaultPos();
 		mMotor.rotateToDefaultPos();
-
-		//		Behavior's priority is determined by it's position in
-//		behaviorArray. First index being the lowest priority
-//		and last being the highest.
 
 //		Behavior b1 = new BUser();
 //		Behavior b2 = new BDemo();
