@@ -20,6 +20,10 @@ public class MiddleMotor {
 	 */
 	private int curRotation;
 
+	/**
+	 *
+	 * @return the current rotation of the motor
+	 */
 	public int getCurRotation() {
 		return curRotation;
 	}
