@@ -1,25 +1,40 @@
 package robot;
 
+import lejos.hardware.Button;
 import lejos.robotics.subsumption.Behavior;
 
 public class BDemo implements Behavior {
+	private TwoTiresTwoCups tttc;
+	private volatile boolean suppressed = false;
+	public BDemo(BottomMotor bMotor, MiddleMotor mMotor, TopMotor tMotor) {
+		tttc = new TwoTiresTwoCups(bMotor, mMotor, tMotor);
+	}
 
 	@Override
 	public boolean takeControl() {
-		// TODO Auto-generated method stub
-		return false;
+		if (Button.LEFT.isDown()) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+		suppressed = false;
+		if(!suppressed&!tttc.isAlive()) {
+			tttc.start();
+		}
 
 	}
 
 	@Override
 	public void suppress() {
-		// TODO Auto-generated method stub
-
+		suppressed = true;
+//		if (tttc.isAlive()) {
+//			tttc
+//		}
 	}
 
 }

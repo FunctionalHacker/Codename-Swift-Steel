@@ -1,12 +1,12 @@
 package robot;
 
-public class TwoTiresTwoCups {
+public class TwoTiresTwoCups extends Thread {
 
 	Navigator navi;
 	ColorSensor color;
 
-	public TwoTiresTwoCups(){
-		navi = new Navigator();
+	public TwoTiresTwoCups(BottomMotor bMotor, MiddleMotor mMotor, TopMotor tMotor){
+		navi = new Navigator(bMotor, mMotor, tMotor);
 		color = new ColorSensor("S1");
 	}
 	public void run(){

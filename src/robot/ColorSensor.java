@@ -76,7 +76,7 @@ public class ColorSensor {
 	public void saveColors() {
     	System.out.println("Show samplecolor A to the color sensor and press Escape to verify it.");
 
-    	while (Button.ID_ESCAPE == Button.waitForAnyPress()) {
+    	while (Button.ID_ENTER == Button.waitForAnyPress()) {
         	colorProvider.fetchSample(colorA, 0);
         	System.out.println(Math.round(colorA[0]*765));
         	System.out.println(Math.round(colorA[1]*765));
@@ -86,7 +86,7 @@ public class ColorSensor {
 
     	System.out.println("");
     	System.out.println("Show samplecolor B to the color sensor and press Escape to verify it.");
-    	while (Button.ID_ESCAPE == Button.waitForAnyPress()) {
+    	while (Button.ID_ENTER == Button.waitForAnyPress()) {
    		 colorProvider.fetchSample(colorB, 0);
         	System.out.println(Math.round(colorB[0]*765));
         	System.out.println(Math.round(colorB[1]*765));

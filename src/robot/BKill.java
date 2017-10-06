@@ -3,17 +3,11 @@ package robot;
 import lejos.hardware.Button;
 import lejos.robotics.subsumption.Behavior;
 
-public class BUser implements Behavior {
-	private User user;
+public class BKill implements Behavior {
 	private volatile boolean suppressed = false;
-
-	public BUser(BottomMotor bMotor, MiddleMotor mMotor, TopMotor tMotor) {
-		user = new User(bMotor, mMotor, tMotor);
-	}
-
 	@Override
 	public boolean takeControl() {
-		if (Button.RIGHT.isDown()) {
+		if (Button.ESCAPE.isDown()) {
 			return true;
 		}
 		else {
@@ -23,7 +17,7 @@ public class BUser implements Behavior {
 
 	@Override
 	public void action() {
-//		user.
+		System.exit(0);
 	}
 
 	@Override

@@ -11,8 +11,11 @@ import lejos.robotics.subsumption.*;
  */
 public class Main {
 	public static void main(String[] args) {
-		TwoTiresTwoCups tttc = new TwoTiresTwoCups();
-		tttc.run();
+		BottomMotor bMotor = new BottomMotor();
+		MiddleMotor mMotor = new MiddleMotor();
+		TopMotor tMotor = new TopMotor();
+//		TwoTiresTwoCups tttc = new TwoTiresTwoCups(bMotor, mMotor, tMotor);
+//		tttc.run();
 
 //		TESTS
 //		TouchSensor tSensor = new TouchSensor("S2");
@@ -29,9 +32,12 @@ public class Main {
 //		bMotor.rotateToDefaultPos();
 //		mMotor.rotateToDefaultPos();
 
-//		Behavior b1 = new BUser();
-//		Behavior b2 = new BDemo();
-//		Behavior[] behaviorArray = {b1, b2};
-//		Arbitrator arbi = new Arbitrator(behaviorArray);
+		Behavior b1 = new BIdle();
+		Behavior b2 = new BUser(bMotor, mMotor, tMotor);
+		Behavior b3 = new BDemo(bMotor, mMotor, tMotor);
+		Behavior b4 = new BKill();
+		Behavior[] behaviorArray = {b1, b2, b3, b4};
+		Arbitrator arbi = new Arbitrator(behaviorArray);
+		arbi.go();
 	}
 }
