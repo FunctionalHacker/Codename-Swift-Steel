@@ -17,6 +17,9 @@ public class Main {
 //		TwoTiresTwoCups tttc = new TwoTiresTwoCups(bMotor, mMotor, tMotor);
 //		tttc.run();
 
+//		TwoTiresTwoCups tttc = new TwoTiresTwoCups();
+//		tttc.run();
+
 //		TESTS
 //		TouchSensor tSensor = new TouchSensor("S2");
 //		BottomMotor bMotor = new BottomMotor(tSensor);
