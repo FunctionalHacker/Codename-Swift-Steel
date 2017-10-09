@@ -19,10 +19,10 @@ public class TwoTiresTwoCups extends Thread {
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
 			System.out.println(color.checkColor());
-			navi.cupB();
+			navi.cupA();
 		} else {
 			System.out.println(color.checkColor());
-			navi.cupA();
+			navi.cupB();
 		}
 		navi.grabToggle();
 
@@ -45,10 +45,10 @@ public class TwoTiresTwoCups extends Thread {
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
 			System.out.println(color.checkColor());
-			navi.cupB();
+			navi.cupA();
 		} else {
 			System.out.println(color.checkColor());
-			navi.cupA();
+			navi.cupB();
 		}
 		navi.grabToggle();
 
