@@ -18,7 +18,6 @@ public class ControllerTest {
 		PSPNXController psp = new PSPNXController(controllerPort);
 		boolean running = true;
 		int buttons[];
-		boolean toggle = false;
 
 		while(running){
 			buttons = psp.getButtons();
@@ -51,9 +50,7 @@ public class ControllerTest {
 			}
 
 			if(buttons[14] == 1){
-				if(toggle == false){
-					tMotor.toggle();
-				}
+				tMotor.toggle();
 			}
 
 

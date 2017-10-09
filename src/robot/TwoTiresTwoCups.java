@@ -20,9 +20,12 @@ public class TwoTiresTwoCups extends Thread {
 		if (color.checkColor()==1) {
 			System.out.println(color.checkColor());
 			navi.cupA();
-		} else {
+		} else if (color.checkColor()==2){
 			System.out.println(color.checkColor());
 			navi.cupB();
+		} else {
+			System.out.println(color.checkColor());
+			navi.cupC();
 		}
 		navi.grabToggle();
 
@@ -32,10 +35,13 @@ public class TwoTiresTwoCups extends Thread {
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
 			System.out.println(color.checkColor());
+			navi.cupA();
+		} else if (color.checkColor()==2){
+			System.out.println(color.checkColor());
 			navi.cupB();
 		} else {
 			System.out.println(color.checkColor());
-			navi.cupA();
+			navi.cupC();
 		}
 		navi.grabToggle();
 
@@ -46,9 +52,12 @@ public class TwoTiresTwoCups extends Thread {
 		if (color.checkColor()==1) {
 			System.out.println(color.checkColor());
 			navi.cupA();
-		} else {
+		} else if (color.checkColor()==2){
 			System.out.println(color.checkColor());
 			navi.cupB();
+		} else {
+			System.out.println(color.checkColor());
+			navi.cupC();
 		}
 		navi.grabToggle();
 
@@ -58,10 +67,13 @@ public class TwoTiresTwoCups extends Thread {
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
 			System.out.println(color.checkColor());
+			navi.cupA();
+		} else if (color.checkColor()==2) {
+			System.out.println(color.checkColor());
 			navi.cupB();
 		} else {
 			System.out.println(color.checkColor());
-			navi.cupA();
+			navi.cupC();
 		}
 		navi.grabToggle();
 
