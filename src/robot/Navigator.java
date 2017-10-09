@@ -12,10 +12,10 @@ public class Navigator {
 	private int cA = 260*3;
 	private int cB = 210*3;
 
-	public Navigator(){
-		bMotor = new BottomMotor();
-		mMotor = new MiddleMotor();
-		tMotor = new TopMotor();
+	public Navigator(BottomMotor bMotor, MiddleMotor mMotor, TopMotor tMotor){
+		this.bMotor = bMotor;
+		this.mMotor = mMotor;
+		this.tMotor = tMotor;
 	}
 
 	public void tireA1(){

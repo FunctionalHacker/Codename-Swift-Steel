@@ -1,5 +1,6 @@
 package robot;
 
+import lejos.hardware.Button;
 import lejos.hardware.motor.EV3MediumRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.robotics.RegulatedMotor;
@@ -10,27 +11,58 @@ import lejos.robotics.RegulatedMotor;
  *
  */
 public class TopMotor {
-	private int maxRotation = 85;
-	private boolean position;
+	private int maxRotation = 90;
+	private boolean isOpen;
+	int tacho = 0;
+	boolean stop = false;
 	/**
 	 * The LeJOS motor used in this class
 	 */
 	private RegulatedMotor tMotor = new EV3MediumRegulatedMotor(MotorPort.C);
 	public TopMotor() {
-		position = true;
-		tMotor.setSpeed(200);
+		isOpen = true; //Tärkeä
+		tMotor.setSpeed(100);
 	}
 
 	/**
 	 * Changes the state of the hand. If it's closed, it's opened and vice versa.
 	 */
+//	public void vanhaToggle() {
+//		if (isOpen) {
+//			tMotor.rotate(maxRotation);
+//			isOpen = false;
+//		} else {
+//			tMotor.rotate(-maxRotation);
+//			isOpen = true;
+//		}
+//	}
+
 	public void toggle() {
-		if (position) {
-			tMotor.rotate(maxRotation);
-			position = false;
+		//forward = kiinni
+		if (!isOpen) {
+			System.out.println("avaudu");
+			tMotor.forward();
+			while(true) {
+				tacho = tMotor.getTachoCount();
+				if (tMotor.getTachoCount() > 100 || Button.ESCAPE.isDown()) {
+					tMotor.stop();
+					tMotor.resetTachoCount();
+					isOpen = true;
+					break;
+				}
+			}
 		} else {
-			tMotor.rotate(-maxRotation);
-			position = true;
+			System.out.println("sulkeudu");
+			tMotor.backward();
+				while(true) {
+					tacho = tMotor.getTachoCount();
+					if (tMotor.getTachoCount() < -100 || Button.ESCAPE.isDown()) {
+						tMotor.stop();
+						tMotor.resetTachoCount();
+						isOpen = false;
+						break;
+					}
+				}
+			}
 		}
-	}
 }
