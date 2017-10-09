@@ -56,7 +56,7 @@ public class TopMotor {
 			tMotor.backward();
 				while(true) {
 					tacho = tMotor.getTachoCount();
-					if (tMotor.getTachoCount() < -100 || Button.ESCAPE.isDown()) {
+					if (tMotor.getTachoCount() < -110 || Button.ESCAPE.isDown()) {
 						tMotor.stop();
 						tMotor.resetTachoCount();
 						isOpen = false;

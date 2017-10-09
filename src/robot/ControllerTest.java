@@ -11,28 +11,53 @@ public class ControllerTest {
 	public static void main(String[] args) {
 		RegulatedMotor bMotor = new EV3LargeRegulatedMotor(MotorPort.A);
 		RegulatedMotor mMotor = new EV3LargeRegulatedMotor(MotorPort.B);
-		RegulatedMotor tMotor = new EV3MediumRegulatedMotor(MotorPort.C);
+		bMotor.setSpeed(100);
+		mMotor.setSpeed(100);
+		TopMotor tMotor = new TopMotor();
 		Port controllerPort = LocalEV3.get().getPort("S3");
 		PSPNXController psp = new PSPNXController(controllerPort);
 		boolean running = true;
 		int buttons[];
+		boolean toggle = false;
 
 		while(running){
 			buttons = psp.getButtons();
-			try {
 			if(buttons[0] == 1){
 				bMotor.forward();
 			}
 			else if(buttons[0] == 0 && bMotor.getRotationSpeed() > 0){
 				bMotor.stop();
 			}
+
 			if(buttons[2] == 1){
 				bMotor.backward();
 			}
 			else if(buttons[2] == 0 && bMotor.getRotationSpeed() < 0){
 				bMotor.stop();
 			}
+
 			if(buttons[1] == 1){
+				mMotor.forward();
+			}
+			else if(buttons[1] == 0 && mMotor.getRotationSpeed() > 0){
+				mMotor.stop();
+			}
+
+			if(buttons[3] == 1){
+				mMotor.backward();
+			}
+			else if(buttons[3] == 0 && mMotor.getRotationSpeed() < 0){
+				mMotor.stop();
+			}
+
+			if(buttons[14] == 1){
+				if(toggle == false){
+					tMotor.toggle();
+				}
+			}
+
+
+			if(buttons[11] == 1){
 				psp.close();
 				bMotor.close();
 				running = false;
