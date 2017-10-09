@@ -5,9 +5,9 @@ public class TwoTiresTwoCups extends Thread {
 	Navigator navi;
 	ColorSensor color;
 
-	public TwoTiresTwoCups(BottomMotor bMotor, MiddleMotor mMotor, TopMotor tMotor){
+	public TwoTiresTwoCups(BottomMotor bMotor, MiddleMotor mMotor, TopMotor tMotor, ColorSensor color){
 		navi = new Navigator(bMotor, mMotor, tMotor);
-		color = new ColorSensor("S1");
+		this.color = color;
 	}
 	public void run(){
 		navi.lift();

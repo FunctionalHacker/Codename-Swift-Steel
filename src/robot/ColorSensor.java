@@ -14,6 +14,7 @@ public class ColorSensor {
 	private float[] rgbSample;
 	private float[] colorA;
 	private float[] colorB;
+	private float[] colorC;
 
 	/**
 	 * Class constructor with a String parameter for configuring the port.
@@ -26,6 +27,7 @@ public class ColorSensor {
 		rgbSample = new float[colorProvider.sampleSize()];
 		colorA = new float[colorProvider.sampleSize()];
 		colorB = new float[colorProvider.sampleSize()];
+		colorC = new float[colorProvider.sampleSize()];
 	}
 
 	/**
@@ -44,6 +46,12 @@ public class ColorSensor {
         realB[1] = Math.round(colorB[1]*765);
         realB[2] = Math.round(colorB[2]*765);
 
+
+		int[] realC = new int[3];
+        realC[0] = Math.round(colorC[0]*765);
+        realC[1] = Math.round(colorC[1]*765);
+        realC[2] = Math.round(colorC[2]*765);
+
         int[] sampleRGB = new int[3];
         sampleRGB[0] = Math.round(rgbSample[0]*765);
         sampleRGB[1] = Math.round(rgbSample[1]*765);
@@ -61,12 +69,21 @@ public class ColorSensor {
         int bB = realB[2] - sampleRGB[2];
         sampleColorB = Math.sqrt((bR*bR) + (bG*bG) + (bB*bB));
 
+        double sampleColorC;
+        int cR = realC[0] - sampleRGB[0];
+        int cG = realC[1] - sampleRGB[1];
+        int cB = realC[2] - sampleRGB[2];
+        sampleColorC = Math.sqrt((cR*cR) + (cG*cG) + (cB*cB));
+
         int thresholdValue = 50;
         if (thresholdValue > sampleColorA) {
                 return 1;
         }
         if (thresholdValue > sampleColorB) {
             return 2;
+        }
+        if (thresholdValue > sampleColorC) {
+            return 3;
         }
         return 0;
 	}
@@ -94,5 +111,14 @@ public class ColorSensor {
         	System.out.println("Press any key to continue.");
     	}
 
+    	System.out.println("");
+    	System.out.println("Show samplecolor C to the color sensor and press Escape to verify it.");
+    	while (Button.ID_ENTER == Button.waitForAnyPress()) {
+   		 colorProvider.fetchSample(colorC, 0);
+        	System.out.println(Math.round(colorC[0]*765));
+        	System.out.println(Math.round(colorC[1]*765));
+        	System.out.println(Math.round(colorC[2]*765));
+        	System.out.println("Press any key to continue.");
+    	}
     }
 }

@@ -14,6 +14,7 @@ public class Main {
 		BottomMotor bMotor = new BottomMotor();
 		MiddleMotor mMotor = new MiddleMotor();
 		TopMotor tMotor = new TopMotor();
+		ColorSensor color = new ColorSensor("S1");
 //		TwoTiresTwoCups tttc = new TwoTiresTwoCups(bMotor, mMotor, tMotor);
 //		tttc.run();
 
@@ -37,7 +38,7 @@ public class Main {
 
 		Behavior b1 = new BIdle();
 		Behavior b2 = new BUser(bMotor, mMotor, tMotor);
-		Behavior b3 = new BDemo(bMotor, mMotor, tMotor);
+		Behavior b3 = new BDemo(bMotor, mMotor, tMotor, color);
 		Behavior b4 = new BKill();
 		Behavior[] behaviorArray = {b1, b2, b3, b4};
 		Arbitrator arbi = new Arbitrator(behaviorArray);
