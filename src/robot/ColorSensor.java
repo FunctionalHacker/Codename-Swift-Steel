@@ -91,7 +91,7 @@ public class ColorSensor {
 	 * Sets up the sample colors for the colorCheck method.
 	 */
 	public void saveColors() {
-    	System.out.println("Show samplecolor A to the color sensor and press Escape to verify it.");
+    	System.out.println("Show samplecolor A to the color sensor and press Enter to verify it.");
 
     	while (Button.ID_ENTER == Button.waitForAnyPress()) {
         	colorProvider.fetchSample(colorA, 0);
@@ -102,7 +102,7 @@ public class ColorSensor {
     	}
 
     	System.out.println("");
-    	System.out.println("Show samplecolor B to the color sensor and press Escape to verify it.");
+    	System.out.println("Show samplecolor B to the color sensor and press Enter to verify it.");
     	while (Button.ID_ENTER == Button.waitForAnyPress()) {
    		 colorProvider.fetchSample(colorB, 0);
         	System.out.println(Math.round(colorB[0]*765));
@@ -112,7 +112,7 @@ public class ColorSensor {
     	}
 
     	System.out.println("");
-    	System.out.println("Show samplecolor C to the color sensor and press Escape to verify it.");
+    	System.out.println("Show samplecolor C to the color sensor and press Enter to verify it.");
     	while (Button.ID_ENTER == Button.waitForAnyPress()) {
    		 colorProvider.fetchSample(colorC, 0);
         	System.out.println(Math.round(colorC[0]*765));
