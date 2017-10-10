@@ -22,8 +22,6 @@ public class TopMotor {
 	public TopMotor() {
 		isOpen = true; //Tärkeä
 		tMotor.setSpeed(100);
-		toggle();
-		toggle();
 	}
 
 	/**

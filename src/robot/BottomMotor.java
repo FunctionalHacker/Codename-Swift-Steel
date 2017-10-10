@@ -79,4 +79,28 @@ public class BottomMotor {
 			}
 		}
 	}
+
+	public void forward() {
+		motor.forward();
+	}
+
+	public void stop() {
+		motor.stop();
+	}
+
+	public void backward() {
+		motor.backward();
+	}
+
+	public void close() {
+		motor.close();
+	}
+
+	public int getRotationSpeed() {
+		return motor.getRotationSpeed();
+	}
+
+	public void setSpeed(int speed) {
+		motor.setSpeed(speed);
+	}
 }

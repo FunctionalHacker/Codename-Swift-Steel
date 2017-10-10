@@ -77,8 +77,6 @@ public class TwoTiresTwoCups extends Thread {
 		}
 		navi.grabToggle();
 
-		navi.rotateToDefaultPos();
-
 		// Tire A3
 		navi.tireA2();
 		navi.grabToggle();

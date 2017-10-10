@@ -56,4 +56,24 @@ public class MiddleMotor {
 		rotate(-curRotation);
 		curRotation = 0;
 	}
+
+	public void forward() {
+		motor.forward();
+	}
+
+	public void stop() {
+		motor.stop();
+	}
+
+	public void backward() {
+		motor.backward();
+	}
+
+	public int getRotationSpeed() {
+		return motor.getRotationSpeed();
+	}
+
+	public void setSpeed(int speed) {
+		motor.setSpeed(speed);
+	}
 }

@@ -23,7 +23,7 @@ public class BUser implements Behavior {
 
 	@Override
 	public void action() {
-//		user.
+		user.run();
 	}
 
 	@Override
