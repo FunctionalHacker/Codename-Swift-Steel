@@ -53,18 +53,19 @@ public class TopMotor {
 					break;
 				}
 			}
-		} else {
+		}
+		else {
 			System.out.println("sulkeudu");
 			tMotor.backward();
-				while(true) {
-					tacho = tMotor.getTachoCount();
-					if (tMotor.getTachoCount() < -110 || Button.ESCAPE.isDown()) {
-						tMotor.stop();
-						tMotor.resetTachoCount();
-						isOpen = false;
-						break;
-					}
+			while(true) {
+				tacho = tMotor.getTachoCount();
+				if (tMotor.getTachoCount() < -110 || Button.ESCAPE.isDown()) {
+					tMotor.stop();
+					tMotor.resetTachoCount();
+					isOpen = false;
+					break;
 				}
 			}
 		}
+	}
 }
