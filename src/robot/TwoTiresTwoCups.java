@@ -45,22 +45,6 @@ public class TwoTiresTwoCups extends Thread {
 		}
 		navi.grabToggle();
 
-		// Tire C1
-		navi.tireC1();
-		navi.grabToggle();
-		navi.rotateToDefaultPos();
-		if (color.checkColor()==1) {
-			System.out.println(color.checkColor());
-			navi.cupA();
-		} else if (color.checkColor()==2){
-			System.out.println(color.checkColor());
-			navi.cupB();
-		} else {
-			System.out.println(color.checkColor());
-			navi.cupC();
-		}
-		navi.grabToggle();
-
 		// Tire A2
 		navi.tireA2();
 		navi.grabToggle();
@@ -93,8 +77,26 @@ public class TwoTiresTwoCups extends Thread {
 		}
 		navi.grabToggle();
 
-		// Tire C2
-		navi.tireC2();
+		navi.rotateToDefaultPos();
+
+		// Tire A3
+		navi.tireA2();
+		navi.grabToggle();
+		navi.rotateToDefaultPos();
+		if (color.checkColor()==1) {
+			System.out.println(color.checkColor());
+			navi.cupA();
+		} else if (color.checkColor()==2){
+			System.out.println(color.checkColor());
+			navi.cupB();
+		} else {
+			System.out.println(color.checkColor());
+			navi.cupC();
+		}
+		navi.grabToggle();
+
+		// Tire B3
+		navi.tireB2();
 		navi.grabToggle();
 		navi.rotateToDefaultPos();
 		if (color.checkColor()==1) {
