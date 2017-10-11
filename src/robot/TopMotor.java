@@ -22,21 +22,20 @@ public class TopMotor {
 	public TopMotor() {
 		isOpen = true; //Tärkeä
 		tMotor.setSpeed(100);
-		tMotor.setStallThreshold(1, 100);
 	}
 
 	/**
 	 * Changes the state of the hand. If it's closed, it's opened and vice versa.
 	 */
-//	public void toggle() {
-//		if (isOpen) {
-//			tMotor.rotate(maxRotation);
-//			isOpen = false;
-//		} else {
-//			tMotor.rotate(-maxRotation);
-//			isOpen = true;
-//		}
-//	}
+	public void toggle() {
+		if (isOpen) {
+			tMotor.rotate(maxRotation);
+			isOpen = false;
+		} else {
+			tMotor.rotate(-maxRotation);
+			isOpen = true;
+		}
+	}
 
 //	public void toggle() {
 //		int x = 0;
@@ -74,29 +73,29 @@ public class TopMotor {
 //	}
 //}
 
-	public void toggle() {
-		int testi = 0;
-		int kill = 0;
-		//forward = kiinni
-		if (!isOpen) {
-			System.out.println("avaudu");
-			tMotor.rotate(-tacho);
-			tMotor.resetTachoCount();
-			isOpen = true;
-		}
-		else {
-			System.out.println("sulkeudu");
-			tMotor.backward();
-			while(kill<50000||Button.ESCAPE.isDown()) {
-				tacho = tMotor.getTachoCount();
-				System.out.println(tacho);
-				if (tacho==testi) {
-					kill += 1;
-				}
-				testi = tacho;
-			}
-			isOpen = false;
-			tMotor.stop();
-		}
-	}
+//	public void toggle() {
+//		int testi = 0;
+//		int kill = 0;
+//		//forward = kiinni
+//		if (!isOpen) {
+//			System.out.println("avaudu");
+//			tMotor.rotate(-tacho);
+//			tMotor.resetTachoCount();
+//			isOpen = true;
+//		}
+//		else {
+//			System.out.println("sulkeudu");
+//			tMotor.backward();
+//			while(kill<5||Button.ESCAPE.isDown()) {
+//				tacho = tMotor.getTachoCount();
+//				System.out.println(tacho);
+//				if (tacho==testi) {
+//					kill += 1;
+//				}
+//				testi = tacho;
+//			}
+//			isOpen = false;
+//			tMotor.stop();
+//		}
+//	}
 }
