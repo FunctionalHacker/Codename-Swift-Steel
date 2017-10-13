@@ -42,9 +42,6 @@ public class BDemo implements Behavior {
 	@Override
 	public void suppress() {
 		suppressed = true;
-//		if (tttc.isAlive()) {
-//			tttc
-//		}
 	}
 
 }

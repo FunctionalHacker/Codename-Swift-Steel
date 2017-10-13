@@ -7,7 +7,7 @@ public class Navigator {
 
 	private int rideHeight = 70*3;
 	private int t1Height = rideHeight - 37*3;
-	private int t2Height = rideHeight - 23*3;
+	private int t2Height = rideHeight - 27*3;
 	private int tA = 103*3;
 	private int tB = 60*3;
 	private int cA = 260*3;
@@ -47,13 +47,13 @@ public class Navigator {
 	public void tireA3(){
 		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
 		bMotor.rotate((tA)-bMotor.getCurRotation());
-		mMotor.rotateToDefaultPos();
+		mMotor.rotate(-rideHeight);
 	}
 
 	public void tireB3(){
 		mMotor.rotate((rideHeight)-mMotor.getCurRotation());
 		bMotor.rotate((tB)-bMotor.getCurRotation());
-		mMotor.rotateToDefaultPos();
+		mMotor.rotate(-rideHeight);
 	}
 
 	public void cupA(){

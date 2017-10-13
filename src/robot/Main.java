@@ -15,27 +15,6 @@ public class Main {
 		MiddleMotor mMotor = new MiddleMotor();
 		TopMotor tMotor = new TopMotor();
 		ColorSensor color = new ColorSensor("S1");
-//		TwoTiresTwoCups tttc = new TwoTiresTwoCups(bMotor, mMotor, tMotor);
-//		tttc.run();
-
-//		TwoTiresTwoCups tttc = new TwoTiresTwoCups();
-//		tttc.run();
-
-//		TESTS
-//		TouchSensor tSensor = new TouchSensor("S2");
-//		BottomMotor bMotor = new BottomMotor(tSensor);
-//		MiddleMotor mMotor = new MiddleMotor();
-//		TopMotor tMotor = new TopMotor();
-//
-//		bMotor.rotateToDefaultPos();
-//		mMotor.rotate(500);
-//		tMotor.toggle();
-//		mMotor.rotate(500*3);
-//		bMotor.rotate(-70*3);
-//		tMotor.toggle();
-//		bMotor.rotateToDefaultPos();
-//		mMotor.rotateToDefaultPos();
-
 		Behavior b1 = new BIdle();
 		Behavior b2 = new BUser(bMotor, mMotor, tMotor);
 		Behavior b3 = new BDemo(bMotor, mMotor, tMotor, color);
