@@ -5,7 +5,7 @@ import lejos.hardware.port.MotorPort;
 import lejos.robotics.RegulatedMotor;
 
 /**
- * This is the motor class for the bottom motor of the robot.
+ * The motor class for the bottom motor of the robot.
  * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
  *
  */

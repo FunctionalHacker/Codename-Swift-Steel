@@ -1,5 +1,10 @@
 package robot;
 
+/**
+ * A high level class which contains methods to rotate all motors to a specific place on the working surface
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class Navigator {
 	BottomMotor bMotor;
 	MiddleMotor mMotor;

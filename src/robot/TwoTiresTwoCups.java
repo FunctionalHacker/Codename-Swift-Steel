@@ -3,6 +3,11 @@ package robot;
 import lejos.hardware.Button;
 import lejos.hardware.Sound;
 
+/**
+ * A high level class that determines the movements of all motors during the demo mode
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class TwoTiresTwoCups extends Thread {
 
 	Navigator navi;

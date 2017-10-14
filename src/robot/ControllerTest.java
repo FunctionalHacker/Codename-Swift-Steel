@@ -7,6 +7,11 @@ import lejos.hardware.motor.EV3MediumRegulatedMotor;
 import lejos.hardware.port.*;
 import lejos.robotics.RegulatedMotor;
 
+/**
+ * Just a test class for the controller, not used in the actual runnable project
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class ControllerTest {
 	public static void main(String[] args) {
 		RegulatedMotor bMotor = new EV3LargeRegulatedMotor(MotorPort.A);

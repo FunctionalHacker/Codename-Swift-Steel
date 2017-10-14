@@ -3,7 +3,7 @@ package robot;
 import lejos.hardware.Button;
 import lejos.robotics.subsumption.Behavior;
 /**
- * This is the behaviour class for the demo mode
+ * The behaviour class for the demo mode
  * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
  *
  */

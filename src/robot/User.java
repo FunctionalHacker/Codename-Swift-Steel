@@ -3,7 +3,11 @@ package robot;
 import lejos.hardware.device.PSPNXController;
 import lejos.hardware.ev3.LocalEV3;
 import lejos.hardware.port.Port;
-
+/**
+ * The class for the user mode of the robot
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class User {
 	private BottomMotor bMotor;
 	private MiddleMotor mMotor;

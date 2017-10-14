@@ -3,6 +3,8 @@ package robot;
 import lejos.robotics.subsumption.*;
 
 /**
+ * The main class which is run on the robot
+ * 
  * Behavior's priority is determined by it's position in
  * behaviorArray. First index being the lowest priority
  * and last being the highest.

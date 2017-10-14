@@ -2,7 +2,7 @@ package robot;
 
 import lejos.robotics.subsumption.Behavior;
 /**
- * This is the behaviour class for when the robot is doing nothing.
+ * The behaviour class for when the robot is doing nothing.
  * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
  *
  */

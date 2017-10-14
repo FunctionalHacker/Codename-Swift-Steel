@@ -5,7 +5,12 @@ import lejos.hardware.motor.EV3MediumRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.robotics.RegulatedMotor;
 import lejos.utility.Delay;
-
+/**
+ * Just a test class for testing the boundaries of the robot's movements.
+ * Not used in the actual project.
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class MotorTest {
 	Thread thread = new Thread();
 	private int maxspeed = 500;
