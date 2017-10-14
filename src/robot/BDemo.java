@@ -21,7 +21,10 @@ public class BDemo implements Behavior {
 		this.color = color;
 		tttc = new TwoTiresTwoCups(bMotor, mMotor, tMotor, color);
 	}
-
+	/**
+	 * 
+	 * @return true if the behaviour wants to take control, e.g when the left button is down.
+	 */
 	@Override
 	public boolean takeControl() {
 		if (Button.LEFT.isDown()) {
