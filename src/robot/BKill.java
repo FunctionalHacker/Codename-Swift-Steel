@@ -4,7 +4,7 @@ import lejos.hardware.Button;
 import lejos.robotics.subsumption.Behavior;
 
 /**
- * The behaviour class for the used to kill the program when escape is pressed
+ * The behavior class for the used to kill the program when escape is pressed
  * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
  *
  */

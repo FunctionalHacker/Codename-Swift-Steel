@@ -3,6 +3,12 @@ package robot;
 import lejos.hardware.Button;
 import lejos.robotics.subsumption.Behavior;
 
+/**
+ * Behavior class for the user mode
+ * e.g when the robot is controlled using a game controller
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class BUser implements Behavior {
 	private User user;
 	private volatile boolean suppressed = false;

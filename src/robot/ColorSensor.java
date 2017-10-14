@@ -6,6 +6,11 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.hardware.sensor.SensorModes;
 import lejos.robotics.SampleProvider;
 
+/**
+ * The class for the color sensor, which is used to determine where objects are sorted
+ * @author Team 12: Ville Kautonen, Jerry Hällfors, Marko Korhonen
+ *
+ */
 public class ColorSensor {
 
 	private Port sensorPort;
